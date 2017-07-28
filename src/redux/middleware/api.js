@@ -7,6 +7,7 @@ const API_ROOT = 'https://pr-11-hyg3z3i-ymbo3koy3v3dm.eu.platform.sh/en/jsonapi/
 export const API_DATA_REQUEST = 'API_DATA_REQUEST';
 export const API_DATA_SUCCESS = 'API_DATA_SUCCESS';
 export const API_DATA_FAILURE = 'API_DATA_FAILURE';
+export const SERVER_ROOT = 'https://pr-11-hyg3z3i-ymbo3koy3v3dm.eu.platform.sh/';
 
 function callApi(endpoint, options = {}) {
   const fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint;
@@ -17,7 +18,6 @@ function callApi(endpoint, options = {}) {
         if (!response.ok) {
           return Promise.reject(json);
         }
-
         // console.log(fullUrl);
         // console.log(json);
         // console.log(endpoint);
