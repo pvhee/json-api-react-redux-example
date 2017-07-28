@@ -1,17 +1,19 @@
 import React, { PropTypes } from 'react';
-import Post from '../Post';
+import Paragraph from '../Paragraph';
 
 const propTypes = {
   question: PropTypes.object.isRequired,
 };
 
 function Question({ question }) {
-  const postWidgets = question.posts.map(post => <Post key={post.id} post={post} />);
+  console.log(question.fieldArticleBody);
+  // const postWidgets = question.posts.map(post => <Post key={post.id} post={post} />);
+  const paragraphs = question.fieldArticleBody.map(p => <Paragraph key={p.id} paragraph={p} />);
 
   return (
     <div className="question">
-      {question.text}
-      {postWidgets}
+      {question.title}
+      {paragraphs}
     </div>
   );
 }

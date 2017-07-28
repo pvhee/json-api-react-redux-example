@@ -1,7 +1,8 @@
 import fetch from 'isomorphic-fetch';
 import normalize from 'json-api-normalizer';
 
-const API_ROOT = 'https://phoenix-json-api-example.herokuapp.com/api';
+// const API_ROOT = 'https://phoenix-json-api-example.herokuapp.com/api';
+const API_ROOT = 'https://pr-11-hyg3z3i-ymbo3koy3v3dm.eu.platform.sh/fr/jsonapi/node/article?_format=json&include=field_article_body,field_article_teaser_image&fields[paragraph--paragraph_arte_video]=field_paragraph_program_id&fields[paragraph--paragraph_text]=field_paragraph_body&fields[node--article]=langcode,title,field_article_subtitle,field_article_body,field_article_teaser_image&fields[file--file]=filename,url,filesize';
 
 export const API_DATA_REQUEST = 'API_DATA_REQUEST';
 export const API_DATA_SUCCESS = 'API_DATA_SUCCESS';
@@ -16,6 +17,11 @@ function callApi(endpoint, options = {}) {
         if (!response.ok) {
           return Promise.reject(json);
         }
+
+        // console.log(fullUrl);
+        // console.log(json);
+        // console.log(endpoint);
+        // console.log(normalize(json, { endpoint }));
 
         return Object.assign({}, normalize(json, { endpoint }));
       }),

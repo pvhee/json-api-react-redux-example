@@ -16,6 +16,7 @@ function Content({ loading = false, dispatch, questions }) {
     dispatch(test());
   }
 
+  console.log(questions);
   const qWidgets = questions.map(q => <Question key={q.id} question={q} />);
 
   return (
@@ -29,9 +30,12 @@ function Content({ loading = false, dispatch, questions }) {
 Content.propTypes = propTypes;
 
 function mapStateToProps(state) {
-  if (state.data.meta['/test']) {
-    const questions = (state.data.meta['/test'].data || []).map(object => build(state.data, 'question', object.id));
-    const loading = state.data.meta['/test'].loading;
+  // console.log(state);
+  if (state.data.meta['/']) {
+    // console.log(state);
+    const questions = (state.data.meta['/'].data || []).map(object => build(state.data, 'nodeArticle', object.id));
+    const loading = state.data.meta['/'].loading;
+    // console.log(questions);
 
     return { questions, loading };
   }
