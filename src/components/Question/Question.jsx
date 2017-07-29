@@ -7,7 +7,7 @@ const propTypes = {
 };
 
 function Question({ question }) {
-  // console.log(question.fieldArticleTeaserImage);
+  // console.log(question);
   const paragraphs = question.fieldArticleBody.map(p => <Paragraph key={p.id} paragraph={p} />);
   const imgSrc = SERVER_ROOT + question.fieldArticleTeaserImage.url;
 
@@ -15,7 +15,7 @@ function Question({ question }) {
     <div className="question">
       {question.title}
       {paragraphs}
-      <img src={imgSrc} role="presentation" width="300px"/>
+      <img src={imgSrc} role="presentation" width="300px" />
     </div>
   );
 }

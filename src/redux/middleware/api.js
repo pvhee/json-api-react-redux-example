@@ -2,7 +2,8 @@ import fetch from 'isomorphic-fetch';
 import normalize from 'json-api-normalizer';
 
 // const API_ROOT = 'https://phoenix-json-api-example.herokuapp.com/api';
-const API_ROOT = 'https://pr-11-hyg3z3i-ymbo3koy3v3dm.eu.platform.sh/en/jsonapi/node/article?_format=json&include=field_article_body,field_article_teaser_image&fields[paragraph--paragraph_arte_video]=field_paragraph_program_id&fields[paragraph--paragraph_text]=field_paragraph_body&fields[node--article]=langcode,title,field_article_subtitle,field_article_body,field_article_teaser_image&fields[file--file]=filename,url,filesize';
+// const API_ROOT = 'https://pr-11-hyg3z3i-ymbo3koy3v3dm.eu.platform.sh/en/jsonapi/node/article?_format=json&include=field_article_body,field_article_teaser_image&fields[paragraph--paragraph_arte_video]=field_paragraph_program_id&fields[paragraph--paragraph_text]=field_paragraph_body&fields[node--article]=langcode,title,field_article_subtitle,field_article_body,field_article_teaser_image&fields[file--file]=filename,url,filesize';
+const API_ROOT = 'https://pr-11-hyg3z3i-ymbo3koy3v3dm.eu.platform.sh/en/jsonapi/node/article?_format=json&include=field_article_body,field_article_teaser_image&fields[paragraph--paragraph_arte_video]=field_paragraph_program_id&fields[paragraph--paragraph_text]=field_paragraph_body&fields[node--article]=langcode,title,field_article_subtitle,field_article_body,field_article_teaser_image&fields[paragraph--paragraph_text_image]=field_paragraph_body, field_paragraph_image&fields[paragraph--paragraph_arte_collection]=field_paragraph_collection_id';
 
 export const API_DATA_REQUEST = 'API_DATA_REQUEST';
 export const API_DATA_SUCCESS = 'API_DATA_SUCCESS';
