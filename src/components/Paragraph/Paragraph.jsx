@@ -6,7 +6,6 @@ const propTypes = {
 
 function Paragraph({ paragraph }) {
     // const commentWidgets = post.comments.map(c => <Comment key={c.id} comment={c} />);
-
   // const type = paragraph.type;
   console.log(paragraph);
 
@@ -14,7 +13,7 @@ function Paragraph({ paragraph }) {
     case 'paragraphParagraphText':
       return (<div className="paragraph">{paragraph.fieldParagraphBody.value}</div>);
     case 'paragraphParagraphArteVideo':
-      return (<div className="paragraph">Video ID: {paragraph.fieldParagraphProgramId}</div>);
+      return (<div dangerouslySetInnerHTML={{ __html: paragraph.fieldParagraphProgramId }} />);
     default:
       return (<div>{paragraph.type}</div>);
   }
